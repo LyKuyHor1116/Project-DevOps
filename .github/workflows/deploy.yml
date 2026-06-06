@@ -13,7 +13,7 @@ jobs:
       - name: Pull Latest Code
         shell: powershell
         run: |
-          Set-Location "D:\Final"
+          Set-Location "D:\Project-DevOps"
 
           git pull origin main
 
