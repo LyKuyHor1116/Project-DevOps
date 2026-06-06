@@ -1,0 +1,23 @@
+name: Auto Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Pull Latest Code
+        shell: powershell
+        run: |
+          Set-Location "D:\Final"
+
+          git pull origin main
+
+      - name: Restart Nginx
+        shell: powershell
+        run: |
+          docker restart nginx_server
